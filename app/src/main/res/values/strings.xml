@@ -1,0 +1,132 @@
+<resources>
+
+    <string name="app_name">InventoryApp</string>
+
+    <string name="action_fake_data">Insert example data</string>
+    <string name="action_delete_products">Delete all entries</string>
+    <string name="save_icon">Save icon</string>
+    <string name="delete">Delete</string>
+    <string name="inventoryapp">/inventoryapp</string>
+    <string name="invent">inventoryapp</string>
+    <string name="tel_prefix">tel:</string>
+    <string name="sale_button">Sale button</string>
+    <string name="out_of_stock_message">Out of stock. In order to buy this book please contact\u0020</string>
+    <string name="failed_to_load_image">Failed to load image.</string>
+
+    <string name="supplier1">Supplier one</string>
+    <string name="supplier2">Supplier two</string>
+    <string name="supplier3">Supplier three</string>
+    <string name="supplier4">Supplier four</string>
+    <string name="supplier5">Supplier five</string>
+    <string name="supplier6">Supplier six</string>
+    <string name="supplier7">Supplier seven</string>
+
+    <!-- activity_editor.xml strings -->
+    <string name="book_title">Book title:</string>
+    <string name="book_title_hint">Book title</string>
+    <string name="supplier_name">Supplier Name:</string>
+    <string name="phone_number">Phone number:</string>
+    <string name="phone_number_hint">Phone number</string>
+    <string name="quantity">Quantity:</string>
+    <string name="quantity_hint">Quantity</string>
+    <string name="price">Price:</string>
+    <string name="price_hint">Price</string>
+    <string name="price_label">USD</string>
+    <string name="book_image">Book image:</string>
+    <string name="book_image_description">Book image</string>
+    <string name="change_image_text">Click on\nthe image to\nchange it</string>
+    <string name="arrow">Arrow</string>
+    <string name="editor_head_image">Head image</string>
+
+    <!-- activity_main.xml strings -->
+    <string name="empty_head_text">It\'s a little bare at the moment</string>
+    <string name="fill_text">Fill the bookstore</string>
+    <string name="empty_bookshelf">Empty bookshelf</string>
+
+    <!-- info_dialog.xml strings -->
+    <string name="book_details">Book Details</string>
+    <string name="edit_book">Edit Book</string>
+    <string name="book_editor">Book editor</string>
+    <string name="details">Book details</string>
+
+    <!-- item_details.xml strings -->
+    <string name="details_book_title">Book title:\u0020</string>
+    <string name="details_quantity">Quantity:\u0020</string>
+    <string name="details_price">Price:\u0020</string>
+    <string name="details_supplier_name">Supplier name:\u0020</string>
+    <string name="details_supplier_phone">Supplier phone:\u0020</string>
+    <string name="details_image">Book image</string>
+    <string name="details_delete_button">Delete button</string>
+    <string name="details_order_button">Order button</string>
+    <string name="details_addition_button">Addition button</string>
+    <string name="details_subtraction_button">Subtraction button</string>
+
+    <!-- EditorActivity class strings -->
+    <string name="unfilled_fields">Please fill the empty fields.</string>
+    <string name="unfilled_quantity">Please enter the quantity.</string>
+    <string name="unfilled_price">Please enter the book price.</string>
+    <string name="unfilled_title">Please enter the book title.</string>
+    <string name="editor_activity_add_new_book">Add a new Book</string>
+    <string name="editor_activity_edit_book">Edit Book</string>
+    <string name="editor_alert_dialog_message">Do you really want to delete this book?</string>
+    <string name="editor_alert_dialog_positive_button">Delete</string>
+    <string name="editor_alert_dialog_negative_button">Cancel</string>
+    <string name="editor_successful_book_deletion">The book has been deleted.</string>
+    <string name="editor_unsuccessful_book_deletion">Something went wrong</string>
+    <string name="editor_unsaved_changes_message">Discard your changes and quit editing?</string>
+    <string name="editor_unsaved_positive_button">Discard</string>
+    <string name="editor_unsaved_negative_button">Keep Editing</string>
+    <string name="editor_error_while_saving_book">There was an error while saving the book.</string>
+    <string name="editor_successful_book_insertion">The book has been successfully saved.</string>
+    <string name="editor_error_while_updating_book">There was an error while updating the book.</string>
+    <string name="editor_successful_book_update">The book has been successfully updated.</string>
+    <string name="editor_image_string_received">imageString received:\u0020</string>
+    <string name="editor_image_string_inserted">imageString after insertion:\u0020</string>
+    <string name="editor_image_string_from_loader">imageString from loader:\u0020</string>
+    <string name="editor_put_string">putString imageString\u0020</string>
+    <string name="editor_get_string">getString imageString\u0020</string>
+    <string name="editor_new_image">newImage</string>
+
+    <!-- MainActivity class strings -->
+    <string name="example_title1">Android Design Patterns and Best Practice</string>
+    <string name="example_title2">Android Application Development Cookbook</string>
+    <string name="example_title3">Java Deep Learning Essentials</string>
+    <string name="example_title4">Object-Oriented JavaScript</string>
+    <string name="example_title5">Programming Kotlin</string>
+    <string name="example_title6">Learning Python Application Development</string>
+    <string name="example_title7">PHP 7 Programming Cookbook</string>
+    <string name="example_phone_number1">(123)\u0020123&#8211;1234</string>
+    <string name="example_phone_number2">(123)\u0020234&#8211;3456</string>
+    <string name="example_phone_number3">(234)\u0020345&#8211;4567</string>
+    <string name="example_phone_number4">(234)\u0020456&#8211;5678</string>
+    <string name="example_phone_number5">(345)\u0020567&#8211;6789</string>
+    <string name="example_phone_number6">(345)\u0020678&#8211;7890</string>
+    <string name="example_phone_number7">(456)\u0020789&#8211;8901</string>
+    <string name="example_data">example data</string>
+    <string name="log_current_book_uri">currentBookUri bundle\u0020</string>
+    <string name="rows_deleted">\u0020rows deleted from book database</string>
+    <string name="projection_string">projection string from the MainActivity:\u0020</string>
+
+    <!-- DetailsFragment strings -->
+    <string name="no_more">No more\u0020\'</string>
+    <string name="books_in_store">\'\u0020books in stock.</string>
+    <string name="no_phone_toast">Supplier has no phone number.</string>
+    <string name="new_uri_details">newUri bundle details\u0020</string>
+    <string name="image_on_load_finished">Details image from onLoadFinished:\u0020</string>
+
+    <!-- BookAdapter strings -->
+    <string name="quantityText">&lt;b>Quantity:&lt;/b>\u0020</string>
+    <string name="priceText">&lt;b>Price:&lt;/b>\u0020</string>
+    <string name="log_quantity">book quantity\u0020</string>
+
+    <!-- InventoryProvider strings -->
+    <string name="update_title">Failed to update the book title.</string>
+    <string name="update_supplier">Failed to update the supplier.</string>
+    <string name="update_quantity">Failed to update to quantity.</string>
+    <string name="update_price">Failed to update to book price.</string>
+    <string name="insert_title">Book requires valid title.</string>
+    <string name="insert_supplier">Failed to insert supplier.</string>
+    <string name="insert_quantity">Book requires valid price.</string>
+    <string name="insert_price">Book requires valid quantity.</string>
+    <string name="throw_insertion">Failed to insert row for\u0020</string>
+</resources>

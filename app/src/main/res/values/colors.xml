@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="editorColorPrimary">#3F51B5</color>
+    <color name="editorColorPrimaryDark">#303F9F</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="editor_background">#F7F1C5</color>
+    <color name="background_toast">#B3000000</color>
+    <color name="info_dialog_background">#AFFFFF</color>
+    <color name="details_window_background">#FFFFFF</color>
+
+</resources>

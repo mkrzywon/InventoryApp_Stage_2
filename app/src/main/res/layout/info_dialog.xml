@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/info"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        style="@style/info_layout"
+        android:layout_marginStart="@dimen/standard"
+        android:layout_marginEnd="@dimen/half">
+
+        <ImageButton
+            android:id="@+id/book_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/info_buttons_background"
+            android:contentDescription="@string/details"
+            android:src="@drawable/details_button" />
+
+        <TextView
+            android:id="@+id/details_text"
+            style="@style/empty_view_head_text.info_text"
+            android:gravity="center_horizontal"
+            android:text="@string/book_details" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/info_layout"
+        android:layout_marginStart="@dimen/half"
+        android:layout_marginEnd="@dimen/standard">
+
+        <ImageButton
+            android:id="@+id/book_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/info_buttons_background"
+            android:contentDescription="@string/book_editor"
+            android:src="@drawable/edit_button_pushed" />
+
+        <TextView
+            style="@style/empty_view_head_text.info_text"
+            android:id="@+id/editor_text"
+            android:gravity="center_horizontal"
+            android:text="@string/edit_book" />
+
+    </LinearLayout>
+
+</LinearLayout>

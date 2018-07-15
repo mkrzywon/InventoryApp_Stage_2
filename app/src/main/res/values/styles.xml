@@ -1,0 +1,205 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- Theme of the editor -->
+    <style name="EditorTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/editorColorPrimary</item>
+        <item name="colorPrimaryDark">@color/editorColorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- Style for details dialog fragment window portrait mode -->
+    <style name="DialogFragment" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/rounded_shape</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:minWidth">350dp</item>
+    </style>
+
+    <!-- Style for animation of details dialog fragment window -->
+    <style
+        name="details_dialog_animation_fade" >
+        <item name="android:windowEnterAnimation">@anim/details_fade_in_dialog</item>
+        <item name="android:windowExitAnimation">@anim/details_fade_out_dialog</item>
+    </style>
+
+    <!-- Style for info dialog fragment window -->
+    <style name="InfoDialogFragment" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/info_background</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:maxWidth">350dp</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <!-- Style for animation of info dialog fragment window -->
+    <style
+        name="info_dialog_animation_fade" >
+        <item name="android:windowEnterAnimation">@anim/info_fade_in_dialog</item>
+        <item name="android:windowExitAnimation">@anim/info_fade_out_dialog</item>
+    </style>
+
+    <!-- Styles for activity_editor.xml file -->
+    <style name="editor_edit_text">
+        <item name="android:layout_width">@dimen/zero</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/markone</item>
+    </style>
+
+    <style name="editor_edit_text.text_view">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="editor_edit_text.price">
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="editor_edit_text.currency">
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="editor_image_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/standard</item>
+    </style>
+
+    <style name="editor_image_text.arrow">
+        <item name="android:layout_marginStart">@dimen/half</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="empty_view_head_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/markone</item>
+        <item name="android:textSize">@dimen/empty_view_text</item>
+    </style>
+
+    <style name="empty_view_head_text.follow">
+        <item name="android:layout_marginBottom">@dimen/quarter</item>
+    </style>
+
+    <style name="spinner">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/double_standard</item>
+        <item name="android:fontFamily">@font/markone</item>
+    </style>
+
+    <style name="main_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_margin">@dimen/standard</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="scroll_view.editor">
+        <item name="android:background">@color/editor_background</item>
+    </style>
+
+    <style name="field_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="spinner_layout">
+        <item name="android:layout_width">@dimen/zero</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- Styles for info_dialog.xml file -->
+    <style name="empty_view_head_text.info_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:paddingTop">@dimen/half</item>
+        <item name="android:textSize">@dimen/info_dialog_text</item>
+    </style>
+
+    <style name="info_layout">
+        <item name="android:layout_width">@dimen/zero</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/double_standard</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- Styles for item_details.xml file -->
+    <style name="scroll_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:fillViewport">true</item>
+    </style>
+
+    <style name="details_text_field">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/markone</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/details_text</item>
+    </style>
+
+    <style name="details_text_field.weight">
+        <item name="android:layout_width">@dimen/zero</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="details_text_field.weight.desc">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="details_button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+    <style name="details_button.plus">
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="details_button.plus.minus">
+        <item name="android:layout_alignParentEnd">true</item>
+    </style>
+
+    <style name="details_cell_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/half</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!-- Styles for list_item.xml file -->
+    <style name="details_text_field.list_title">
+        <item name="android:textSize">@dimen/item_list_text</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="editor_edit_text.values">
+        <item name="android:textSize">@dimen/item_list_text</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- Styles for item_details.xml file -->
+    <style name="empty_view_head_text.toast_text">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="toast">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/background_toast</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+</resources>

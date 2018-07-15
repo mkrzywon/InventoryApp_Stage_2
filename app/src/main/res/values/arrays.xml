@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="array_supplier_name">
+        <item>@string/supplier1</item>
+        <item>@string/supplier2</item>
+        <item>@string/supplier3</item>
+        <item>@string/supplier4</item>
+        <item>@string/supplier5</item>
+        <item>@string/supplier6</item>
+        <item>@string/supplier7</item>
+    </string-array>
+</resources>

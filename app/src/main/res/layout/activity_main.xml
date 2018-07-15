@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/main_layout"
+    tools:context=".MainActivity">
+
+    <ListView
+        android:id="@+id/book_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/bookshelf_divider"
+        android:dividerHeight="@dimen/double_standard"
+        android:focusable="false"
+        android:focusableInTouchMode="false" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/add_data" />
+
+    <RelativeLayout
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/empty_text"
+            style="@style/empty_view_head_text"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/fill"
+            android:text="@string/empty_head_text" />
+
+        <TextView
+            android:id="@+id/fill"
+            style="@style/empty_view_head_text.follow"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/empty_bookshelf"
+            android:text="@string/fill_text" />
+
+        <ImageView
+            android:id="@+id/empty_bookshelf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@color/transparent"
+            android:contentDescription="@string/empty_bookshelf"
+            android:src="@drawable/bookshelf" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
