@@ -344,6 +344,7 @@ public class EditorActivity extends AppCompatActivity implements
 
         // If all required fields are filled a database entry can be made
         if (!TextUtils.isEmpty(bookTitleString) &&
+                !TextUtils.isEmpty(supplierName) &&
                 !TextUtils.isEmpty(quantityString) &&
                 !TextUtils.isEmpty(priceString) &&
                 !TextUtils.isEmpty(phoneNumberString) &&
