@@ -66,6 +66,7 @@
     <string name="unfilled_quantity">Please enter the quantity.</string>
     <string name="unfilled_price">Please enter the book price.</string>
     <string name="unfilled_title">Please enter the book title.</string>
+    <string name="unfilled_phone">Please enter the supplier\'s phone number.</string>
     <string name="editor_activity_add_new_book">Add a new Book</string>
     <string name="editor_activity_edit_book">Edit Book</string>
     <string name="editor_alert_dialog_message">Do you really want to delete this book?</string>
@@ -124,9 +125,13 @@
     <string name="update_supplier">Failed to update the supplier.</string>
     <string name="update_quantity">Failed to update to quantity.</string>
     <string name="update_price">Failed to update to book price.</string>
+    <string name="update_phone">Failed to update the phone number.</string>
+    <string name="update_image">Failed to update the book image.</string>
     <string name="insert_title">Book requires valid title.</string>
     <string name="insert_supplier">Failed to insert supplier.</string>
     <string name="insert_quantity">Book requires valid price.</string>
     <string name="insert_price">Book requires valid quantity.</string>
+    <string name="insert_phone">Supplier requires valid phone number.</string>
+    <string name="insert_image">Book requires valid image.</string>
     <string name="throw_insertion">Failed to insert row for\u0020</string>
 </resources>

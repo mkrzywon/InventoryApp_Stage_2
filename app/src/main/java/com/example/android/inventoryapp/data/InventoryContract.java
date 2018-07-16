@@ -66,13 +66,6 @@ public final class InventoryContract {
         public static final String TABLE_NAME = "books";
 
         /**
-         * Unique ID number for the book.
-         *
-         * Type: INTEGER
-         */
-        public static final String _ID = BaseColumns._ID;
-
-        /**
          * Book title.
          *
          * Type: TEXT

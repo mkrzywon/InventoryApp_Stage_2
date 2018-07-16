@@ -14,6 +14,11 @@ class ProductDbHelper extends SQLiteOpenHelper {
 
     private static final String LOG_TAG = ProductDbHelper.class.getSimpleName();
 
+    private static final String KEY_NOT_NULL = "NOT NULL";
+    private static final String KEY_TEXT = " TEXT ";
+    private static final String DB_ALTER_IMAGE = "ALTER TABLE " + InventoryEntry.TABLE_NAME +
+            " ADD COLUMN " + InventoryEntry.COLUMN_IMAGE + KEY_TEXT + KEY_NOT_NULL;
+
     /**
      * Name of the database file
      */
@@ -22,7 +27,7 @@ class ProductDbHelper extends SQLiteOpenHelper {
     /**
      * Database version. If you change the database schema, you must increment the database version.
      */
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     /**
      * Constructs a new instance of {@link ProductDbHelper}.
@@ -43,17 +48,17 @@ class ProductDbHelper extends SQLiteOpenHelper {
         // Create a String that contains the SQL statement to create the books's table
         String dbQuery = "CREATE TABLE " + InventoryEntry.TABLE_NAME + " ("
                 + InventoryEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + InventoryEntry.COLUMN_BOOK_TITLE + " TEXT NOT NULL, "
-                + InventoryEntry.COLUMN_BOOK_PRICE + " REAL NOT NULL DEFAULT 0, "
-                + InventoryEntry.COLUMN_QUANTITY + " INTEGER NOT NULL DEFAULT 0, "
-                + InventoryEntry.COLUMN_SUPPLIER_NAME + " TEXT NOT NULL, "
-                + InventoryEntry.COLUMN_PHONE_NUMBER + " TEXT, "
-                + InventoryEntry.COLUMN_IMAGE + " TEXT);";
+                + InventoryEntry.COLUMN_BOOK_TITLE + KEY_TEXT + KEY_NOT_NULL + ", "
+                + InventoryEntry.COLUMN_BOOK_PRICE + " REAL " + KEY_NOT_NULL + " DEFAULT 0, "
+                + InventoryEntry.COLUMN_QUANTITY + " INTEGER " + KEY_NOT_NULL + " DEFAULT 0, "
+                + InventoryEntry.COLUMN_SUPPLIER_NAME + KEY_TEXT + KEY_NOT_NULL + ", "
+                + InventoryEntry.COLUMN_PHONE_NUMBER + KEY_TEXT + KEY_NOT_NULL + ", "
+                + InventoryEntry.COLUMN_IMAGE + KEY_TEXT + KEY_NOT_NULL + ");";
 
         // Execute the SQL statement
         base.execSQL(dbQuery);
 
-        Log.i(LOG_TAG, "dbQuery log data" + dbQuery);
+        Log.i(LOG_TAG, "dbQuery log data" + dbQuery + DB_ALTER_IMAGE);
 
     }
 
@@ -62,7 +67,11 @@ class ProductDbHelper extends SQLiteOpenHelper {
      */
     @Override
     public void onUpgrade(SQLiteDatabase base, int oldVersion, int newVersion) {
-        // So far there is no new version of the database and there is no
-        // reason to execute onUpgrade method
+
+        if (oldVersion < 2) {
+
+            base.execSQL(DB_ALTER_IMAGE);
+
+        }
     }
 }

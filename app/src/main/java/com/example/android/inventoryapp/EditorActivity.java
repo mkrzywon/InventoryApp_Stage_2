@@ -85,6 +85,7 @@ public class EditorActivity extends AppCompatActivity implements
     private String bookTitleString;
     private String quantityString;
     private String priceString;
+    private String phoneNumberString;
 
     /**
      * Content URI for the existing book (null if it's a new book)
@@ -168,7 +169,8 @@ public class EditorActivity extends AppCompatActivity implements
         // Defining the no image picture for the new book events.
         if (mCurrentBookUri == null) {
 
-            Uri noImageUri = Uri.parse(InventoryEntry.RES_URI.toString() + R.drawable.no_image);
+            imageString = noImage;
+            Uri noImageUri = Uri.parse(imageString);
             Bitmap noImageBitmap = getBitmapFromUri(noImageUri, 200);
             bookImage.setImageBitmap(noImageBitmap);
 
@@ -333,15 +335,19 @@ public class EditorActivity extends AppCompatActivity implements
         bookTitleString = bookTitle.getText().toString().trim();
         quantityString = editQuantity.getText().toString().trim();
         priceString = editPrice.getText().toString().trim();
-        String phoneNumberString = phoneNumber.getText().toString().trim();
+        phoneNumberString = phoneNumber.getText().toString().trim();
 
         // Conditions in case of empty entry fields
         setEmptyFields();
+        setBulkEmptyFields1();
+        setBulkEmptyFields2();
 
         // If all required fields are filled a database entry can be made
         if (!TextUtils.isEmpty(bookTitleString) &&
                 !TextUtils.isEmpty(quantityString) &&
-                !TextUtils.isEmpty(priceString)) {
+                !TextUtils.isEmpty(priceString) &&
+                !TextUtils.isEmpty(phoneNumberString) &&
+                !TextUtils.isEmpty(imageString)) {
 
             int quantityInt = Integer.parseInt(quantityString);
             Double priceDouble = Double.parseDouble(priceString);
@@ -743,6 +749,7 @@ public class EditorActivity extends AppCompatActivity implements
 
         } else {
 
+            imageString = noImage;
             imageUri = Uri.parse(noImage);
             imageBitmap = getBitmapFromUri(imageUri, 200);
             bookImage.setImageBitmap(imageBitmap);
@@ -755,14 +762,7 @@ public class EditorActivity extends AppCompatActivity implements
      */
     private void setEmptyFields() {
 
-        if ((TextUtils.isEmpty(bookTitleString) && TextUtils.isEmpty(quantityString)) ||
-                (TextUtils.isEmpty(bookTitleString) && TextUtils.isEmpty(priceString)) ||
-                (TextUtils.isEmpty(quantityString) && TextUtils.isEmpty(priceString)) ||
-                (TextUtils.isEmpty(bookTitleString) && TextUtils.isEmpty(quantityString) && TextUtils.isEmpty(priceString))) {
-
-            setCustomToast(text, getBaseContext().getResources().getString(R.string.unfilled_fields));
-
-        } else if (TextUtils.isEmpty(quantityString) &&
+        if (TextUtils.isEmpty(quantityString) &&
                 !TextUtils.isEmpty(priceString) && !TextUtils.isEmpty(bookTitleString)) {
 
             setCustomToast(text, getBaseContext().getResources().getString(R.string.unfilled_quantity));
@@ -776,6 +776,44 @@ public class EditorActivity extends AppCompatActivity implements
                 !TextUtils.isEmpty(quantityString) && !TextUtils.isEmpty(bookTitleString)) {
 
             setCustomToast(text, getBaseContext().getResources().getString(R.string.unfilled_price));
+        } else if (TextUtils.isEmpty(phoneNumberString) && !TextUtils.isEmpty(bookTitleString) &&
+                !TextUtils.isEmpty(quantityString) && !TextUtils.isEmpty(priceString)) {
+
+            setCustomToast(text, getBaseContext().getResources().getString(R.string.unfilled_phone));
+
+        }
+    }
+
+    /**
+     * This method sets the conditions with toast messages for insertBook()
+     */
+    private void setBulkEmptyFields1() {
+
+
+        if ((TextUtils.isEmpty(bookTitleString) && TextUtils.isEmpty(quantityString) && TextUtils.isEmpty(phoneNumberString)) ||
+                (TextUtils.isEmpty(quantityString) && TextUtils.isEmpty(priceString) && TextUtils.isEmpty(phoneNumberString)) ||
+                (TextUtils.isEmpty(bookTitleString) && TextUtils.isEmpty(priceString) && TextUtils.isEmpty(quantityString)) ||
+                (TextUtils.isEmpty(bookTitleString) && TextUtils.isEmpty(quantityString) && TextUtils.isEmpty(priceString) && TextUtils.isEmpty(phoneNumberString))) {
+
+            setCustomToast(text, getBaseContext().getResources().getString(R.string.unfilled_fields));
+
+        }
+    }
+
+    /**
+     * This method sets the conditions with toast messages for insertBook()
+     */
+    private void setBulkEmptyFields2() {
+
+        if ((TextUtils.isEmpty(bookTitleString) && TextUtils.isEmpty(quantityString)) ||
+                (TextUtils.isEmpty(bookTitleString) && TextUtils.isEmpty(priceString)) ||
+                (TextUtils.isEmpty(quantityString) && TextUtils.isEmpty(priceString)) ||
+                (TextUtils.isEmpty(bookTitleString) && TextUtils.isEmpty(phoneNumberString)) ||
+                (TextUtils.isEmpty(quantityString) && TextUtils.isEmpty(phoneNumberString)) ||
+                (TextUtils.isEmpty(priceString) && TextUtils.isEmpty(phoneNumberString))) {
+
+            setCustomToast(text, getBaseContext().getResources().getString(R.string.unfilled_fields));
+
         }
     }
 

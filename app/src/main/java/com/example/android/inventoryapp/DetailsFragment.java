@@ -465,7 +465,12 @@ public class DetailsFragment extends DialogFragment implements LoaderManager.Loa
 
                         Intent intent = new Intent(Intent.ACTION_DIAL);
                         intent.setData(Uri.parse(getResources().getString(R.string.tel_prefix) + phoneNumber));
-                        startActivity(intent);
+
+                        // Checking if the phone has the proper application to handle phone call
+                        if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+
+                            startActivity(intent);
+                        }
 
                         mMediaPlayer = MediaPlayer.create(getActivity(), R.raw.pop_sound);
                         mMediaPlayer.start();

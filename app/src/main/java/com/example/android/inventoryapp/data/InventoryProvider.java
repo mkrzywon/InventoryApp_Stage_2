@@ -172,10 +172,10 @@ public class InventoryProvider extends ContentProvider {
             setSupplierCondition(values, getContext().getResources().getString(R.string.insert_supplier));
             setQuantityCondition(values, getContext().getResources().getString(R.string.insert_quantity));
             setPriceCondition(values, getContext().getResources().getString(R.string.insert_price));
+            setPhoneCondition(values, getContext().getResources().getString(R.string.insert_phone));
+            setImageCondition(values, getContext().getResources().getString(R.string.insert_image));
 
         }
-
-        // There's no need to check the supplier's phone number and image as any value is valid
 
         // Get writable database
         SQLiteDatabase database = mDbHelper.getWritableDatabase();
@@ -284,6 +284,8 @@ public class InventoryProvider extends ContentProvider {
             setSupplierCondition(values, getContext().getResources().getString(R.string.update_supplier));
             setQuantityCondition(values, getContext().getResources().getString(R.string.update_quantity));
             setPriceCondition(values, getContext().getResources().getString(R.string.update_price));
+            setPhoneCondition(values, getContext().getResources().getString(R.string.update_phone));
+            setImageCondition(values, getContext().getResources().getString(R.string.update_image));
 
         }
 
@@ -317,8 +319,8 @@ public class InventoryProvider extends ContentProvider {
 
         String title;
 
-        // If the {@link PetEntry#COLUMN_PET_NAME} key is present,
-        // check that the name value is not null.
+        // If the {@link InventoryEntry#COLUMN_BOOK_TITLE} key is present,
+        // check that the title value is not null.
         if (values.containsKey(InventoryEntry.COLUMN_BOOK_TITLE)) {
             title = values.getAsString(InventoryEntry.COLUMN_BOOK_TITLE);
             if (title == null || title.equals("")) {
@@ -334,8 +336,8 @@ public class InventoryProvider extends ContentProvider {
 
         String supplier;
 
-        // If the {@link PetEntry#COLUMN_PET_GENDER} key is present,
-        // check that the gender value is valid.
+        // If the {@link InventoryEntry#COLUMN_SUPPLIER_NAME} key is present,
+        // check that the supplier value is valid.
         if (values.containsKey(InventoryEntry.COLUMN_SUPPLIER_NAME)) {
             supplier = values.getAsString(InventoryEntry.COLUMN_SUPPLIER_NAME);
             if (supplier == null || !InventoryEntry.isValidSupplier(supplier)) {
@@ -351,10 +353,9 @@ public class InventoryProvider extends ContentProvider {
 
         Integer quantity;
 
-        // If the {@link PetEntry#COLUMN_PET_WEIGHT} key is present,
-        // check that the weight value is valid.
+        // If the {@link InventoryEntry#COLUMN_QUANTITY} key is present,
+        // check that the quantity value is valid.
         if (values.containsKey(InventoryEntry.COLUMN_QUANTITY)) {
-            // Check that the weight is greater than or equal to 0 kg
             quantity = values.getAsInteger(InventoryEntry.COLUMN_QUANTITY);
             if (quantity == null || quantity < 0) {
                 throw new IllegalArgumentException(throwQuantity);
@@ -369,13 +370,46 @@ public class InventoryProvider extends ContentProvider {
 
         Double price;
 
-        // If the {@link PetEntry#COLUMN_PET_WEIGHT} key is present,
-        // check that the weight value is valid.
+        // If the {@link InventoryEntry#COLUMN_BOOK_PRICE} key is present,
+        // check that the price value is valid.
         if (values.containsKey(InventoryEntry.COLUMN_BOOK_PRICE)) {
-            // Check that the weight is greater than or equal to 0 kg
             price = values.getAsDouble(InventoryEntry.COLUMN_BOOK_PRICE);
             if (price == null || price < 0) {
                 throw new IllegalArgumentException(throwPrice);
+            }
+        }
+    }
+
+    /**
+     * Helper method for settings of the supplier's phone number conditions.
+     */
+    private void setPhoneCondition(ContentValues values, String throwPhone) {
+
+        String phone;
+
+        // If the {@link InventoryEntry#COLUMN_PHONE_NUMBER} key is present,
+        // check that the phone number value is valid.
+        if (values.containsKey(InventoryEntry.COLUMN_PHONE_NUMBER)) {
+            phone = values.getAsString(InventoryEntry.COLUMN_PHONE_NUMBER);
+            if (phone == null || phone.equals("")) {
+                throw new IllegalArgumentException(throwPhone);
+            }
+        }
+    }
+
+    /**
+     * Helper method for settings of the image conditions.
+     */
+    private void setImageCondition(ContentValues values, String throwImage) {
+
+        String image;
+
+        // If the {@link InventoryEntry#COLUMN_IMAGE} key is present,
+        // check that the image value is valid.
+        if (values.containsKey(InventoryEntry.COLUMN_IMAGE)) {
+            image = values.getAsString(InventoryEntry.COLUMN_IMAGE);
+            if (image == null || image.equals("")) {
+                throw new IllegalArgumentException(throwImage);
             }
         }
     }
