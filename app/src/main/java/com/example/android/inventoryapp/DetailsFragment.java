@@ -572,11 +572,11 @@ public class DetailsFragment extends DialogFragment implements LoaderManager.Loa
 
             if ((getActivity().getResources().getDisplayMetrics().density == 2)) {
 
-                imageBitmap = getBitmapFromUri(imageUri, 250, 325);
+                imageBitmap = getBitmapFromUri(imageUri, 250, bookImage.getMaxHeight());
 
             } else {
 
-                imageBitmap = getBitmapFromUri(imageUri, 300, 375);
+                imageBitmap = getBitmapFromUri(imageUri, 300, bookImage.getMaxHeight());
 
             }
         }
@@ -591,11 +591,11 @@ public class DetailsFragment extends DialogFragment implements LoaderManager.Loa
 
             if ((getActivity().getResources().getDisplayMetrics().density == 2)) {
 
-                imageBitmap = getBitmapFromUri(imageUri, 300, 300);
+                imageBitmap = getBitmapFromUri(imageUri, 300, bookImage.getMaxHeight());
 
             } else {
 
-                imageBitmap = getBitmapFromUri(imageUri, 400, 400);
+                imageBitmap = getBitmapFromUri(imageUri, 400, bookImage.getMaxHeight());
 
             }
 
